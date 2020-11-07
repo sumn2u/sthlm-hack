@@ -10,9 +10,7 @@ import ProfileScreen from '../screens/Profile'
 import ProScreen from '../screens/Pro'
 import SettingsScreen from '../screens/Settings'
 
-import CustomDrawerContent from './Menu'
-import { Icon, Header } from '../components'
-import { Images, materialTheme } from '../constants/'
+const { width } = Dimensions.get('screen')
 
 import Leaderboard from '../screens/Leaderboard'
 
@@ -26,8 +24,6 @@ const profile = {
   plan: 'Pro',
   rating: 4.8,
 }
-
-const { width } = Dimensions.get('screen')
 
 function ProfileStack(props) {
   return (
