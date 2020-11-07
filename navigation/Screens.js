@@ -10,10 +10,6 @@ import ProfileScreen from '../screens/Profile'
 import ProScreen from '../screens/Pro'
 import SettingsScreen from '../screens/Settings'
 
-import CustomDrawerContent from './Menu'
-import { Icon, Header } from '../components'
-import { Images, materialTheme } from '../constants/'
-
 const { width } = Dimensions.get('screen')
 
 import CustomDrawerContent from './Menu';
