@@ -72,7 +72,28 @@ function SettingsStack(props) {
     </Stack.Navigator>
   );
 }
-
+function LeaderboardStack(props) {
+  return (
+    <Stack.Navigator initialRouteName="Leaderboard" mode="card" headerMode="screen">
+      <Stack.Screen
+        name="Leaderboard"
+        component={Leaderboard}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              white
+              transparent
+              title=""
+              scene={scene}
+              navigation={navigation}
+            />
+          ),
+          headerTransparent: true
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
 function ComponentsStack(props) {
   return (
     <Stack.Navigator mode="card" headerMode="screen">
@@ -120,6 +141,7 @@ function HomeStack(props) {
     </Stack.Navigator>
   );
 }
+
 
 function AppStack(props) {
   return (
@@ -270,13 +292,13 @@ function AppStack(props) {
       />
        <Drawer.Screen
         name="Leaderboard"
-        component={Leaderboard}
+        component={LeaderboardStack}
         options={{
           drawerIcon: ({ focused }) => (
             <Icon
               size={16}
-              name="gears"
-              family="font-awesome"
+              name="md-switch"
+              family="ionicon"
               color={focused ? "white" : materialTheme.COLORS.MUTED}
               style={{ marginRight: -3 }}
             />

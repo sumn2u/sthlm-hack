@@ -1,6 +1,8 @@
 import React from 'react'
-import {StyleSheet,  Text} from 'react-native'
+import {StyleSheet,  Text, Image} from 'react-native'
 import {Block, Icon} from 'galio-framework'
+
+import userImage from '../assets/images/user.jpg'
 
 const RankingBlock = ({username, co2Reduced, rank}) => {
   const size = 28;
@@ -25,16 +27,21 @@ const RankingBlock = ({username, co2Reduced, rank}) => {
 
   return (
     <Block style={styles.rankingBlock}>
-      <Text style={{ color: '#fceef5', fontSize: 17 }}>
-  {rank}. {username}{'  '}{crown}
-      </Text>
-      <Text style={{ fontSize: 14, color: '#fceef5' }}>
-        <Text style={{ color: '#e94560', fontStyle: 'italic', fontSize: 28 }}>
-          {co2Reduced}
+      <Block style={styles.floatLeft}>
+        <Block>
+          <Image style={styles.image} source={userImage}/>
+          </Block> 
+        <Text>{username} {crown}</Text>
+      </Block>
+
+      <Block style={styles.floatRight}>
+        <Text>saved {' '}
+          <Text style={{color: '#14A38B', fontSize: 24}}>
+            {co2Reduced} 
+          </Text>
+          {' '}kg today
         </Text>
-        {'  '}
-        tons of CO2
-      </Text>
+      </Block>
     </Block>
   )
 }
@@ -49,8 +56,23 @@ const styles = StyleSheet.create({
     margin: 3,
     borderRadius: 7,
     borderWidth: 1,
-    borderColor: '#215591',
-    backgroundColor: '#0f3460',
+    borderColor: 'grey',
+    backgroundColor: 'white',
+  }, 
+  image: {
+    width: 50,
+    height: 50,
+    borderRadius: 50,
+    backgroundColor: 'grey',
+    marginRight: 10
   },
+  floatLeft: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  floatRight: {
+
+  }
 });
 export default RankingBlock
