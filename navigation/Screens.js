@@ -15,6 +15,7 @@ import SettingsScreen from '../screens/Settings';
 import CustomDrawerContent from './Menu';
 import { Icon, Header } from '../components';
 import { Images, materialTheme } from "../constants/";
+import Leaderboard from '../screens/Leaderboard';
 
 const { width } = Dimensions.get("screen");
 
@@ -263,6 +264,21 @@ function AppStack(props) {
               family="ionicon"
               color={focused ? "white" : materialTheme.COLORS.MUTED}
               style={{ marginRight: 2, marginLeft: 2 }}
+            />
+          )
+        }}
+      />
+       <Drawer.Screen
+        name="Leaderboard"
+        component={Leaderboard}
+        options={{
+          drawerIcon: ({ focused }) => (
+            <Icon
+              size={16}
+              name="gears"
+              family="font-awesome"
+              color={focused ? "white" : materialTheme.COLORS.MUTED}
+              style={{ marginRight: -3 }}
             />
           )
         }}
