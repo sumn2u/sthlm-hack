@@ -20,18 +20,29 @@ const getEmission = async (distance, type, mode, country, fuel) => {
 }
 
 //**Response will have the shape of an array of { carbonFootPrint: 'number', mode: 'transport mode' } */
-const runRequests = async (distance, type = 'miles', country) => {
+export const runRequests = async (
+  distance,
+  type = 'miles',
+  country = 'def'
+) => {
   try {
     const response = await Promise.all(
       transportModes.map((mode) =>
         getEmission(distance, type, mode.name, country, mode.fuel)
       )
     )
-
     return response
   } catch (error) {
     console.log(error)
   }
 }
 
-export default runRequests
+export const getUserInfo = async (
+  url = 'katiparxa.com:8080/api/facets',
+  userId = 1
+) => {
+  const requestUrl = `${url}/${userId}`
+  const response = await fetch(requestUrl)
+  const result = await response.json()
+  return result
+}
