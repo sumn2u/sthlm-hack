@@ -16,6 +16,12 @@ import { Images, materialTheme } from '../constants/'
 
 const { width } = Dimensions.get('screen')
 
+import CustomDrawerContent from './Menu';
+import { Icon, Header } from '../components';
+import { Images, materialTheme } from "../constants/";
+import Leaderboard from '../screens/Leaderboard';
+
+
 const Stack = createStackNavigator()
 const Drawer = createDrawerNavigator()
 
@@ -269,7 +275,37 @@ function AppStack(props) {
               color={focused ? 'white' : materialTheme.COLORS.MUTED}
               style={{ marginRight: 2, marginLeft: 2 }}
             />
-          ),
+
+          )
+        }}
+      />
+       <Drawer.Screen
+        name="Leaderboard"
+        component={Leaderboard}
+        options={{
+          drawerIcon: ({ focused }) => (
+            <Icon
+              size={16}
+              name="gears"
+              family="font-awesome"
+              color={focused ? "white" : materialTheme.COLORS.MUTED}
+              style={{ marginRight: -3 }}
+            />
+          )
+        }}
+      />
+      <Drawer.Screen
+        name="Log out"
+        component={OnboardingScreen}
+        options={{
+          drawerIcon: ({ focused }) => (
+            <Icon
+              size={16}
+              name="ios-log-in"
+              family="ionicon"
+              color={focused ? "white" : materialTheme.COLORS.MUTED}
+            />
+          )
         }}
       />
 

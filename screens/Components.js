@@ -12,6 +12,8 @@ import { Button, Block, Text, Input, theme } from 'galio-framework';
 import { materialTheme, products, Images } from '../constants/';
 import { Select, Icon, Header, Product, Switch } from '../components/';
 
+import Leaderboard from './Leaderboard';
+
 const { width } = Dimensions.get('screen');
 
 const thumbMeasure = (width - 48 - 32) / 3;
@@ -314,6 +316,7 @@ export default class Components extends React.Component {
         <ScrollView
           style={styles.components}
           showsVerticalScrollIndicator={false}>
+            <Leaderboard/>  
             {this.renderButtons()}
             {this.renderText()}
             {this.renderInputs()}
