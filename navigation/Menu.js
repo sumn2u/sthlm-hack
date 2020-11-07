@@ -24,8 +24,6 @@ function CustomDrawerContent({
   const screens = [
     "Home",
     "Profile",
-    "Settings",
-    "Components",
     "Leaderboard"
   ];
 
