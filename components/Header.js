@@ -64,7 +64,7 @@ class Header extends React.Component {
       case 'Home':
         return ([
           <ChatButton key='chat-home' navigation={navigation} isWhite={white} />,
-          <BasketButton key='basket-home' navigation={navigation} isWhite={white} />
+          // <BasketButton key='basket-home' navigation={navigation} isWhite={white} />
         ]);
       case 'Deals':
         return ([
@@ -79,12 +79,12 @@ class Header extends React.Component {
       case 'Category':
         return ([
           <ChatButton key='chat-deals' navigation={navigation} isWhite={white} />,
-          <BasketButton key='basket-deals' navigation={navigation} isWhite={white} />
+          // <BasketButton key='basket-deals' navigation={navigation} isWhite={white} />
         ]);
       case 'Profile':
         return ([
-          <ChatButton key='chat-profile' navigation={navigation} isWhite={white} />,
-          <BasketButton key='basket-deals' navigation={navigation} isWhite={white} />
+          // <ChatButton key='chat-profile' navigation={navigation} isWhite={white} />,
+          // <BasketButton key='basket-deals' navigation={navigation} isWhite={white} />
         ]);
       case 'Product':
         return ([
@@ -98,8 +98,8 @@ class Header extends React.Component {
         ]);
       case 'Settings':
         return ([
-          <ChatButton key='chat-search' navigation={navigation} isWhite={white} />,
-          <BasketButton key='basket-search' navigation={navigation} isWhite={white} />
+          // <ChatButton key='chat-search' navigation={navigation} isWhite={white} />,
+          // <BasketButton key='basket-search' navigation={navigation} isWhite={white} />
         ]);
       default:
         break;

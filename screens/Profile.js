@@ -6,6 +6,7 @@ import {
   Image,
   ImageBackground,
   Platform,
+  View
 } from 'react-native'
 import { Block, Text, theme } from 'galio-framework'
 import { LinearGradient } from 'expo-linear-gradient'
@@ -15,12 +16,40 @@ import { Images, materialTheme } from '../constants'
 import { HeaderHeight } from '../constants/utils'
 import { AntDesign } from '@expo/vector-icons'
 import { FontAwesome } from '@expo/vector-icons'
+import {
+  LineChart,
+  BarChart,
+  PieChart,
+  ProgressChart,
+  ContributionGraph,
+  StackedBarChart
+} from "react-native-chart-kit";
 
 import profile from '../assets/images/profile.jpg'
 
 const { width, height } = Dimensions.get('screen')
+const screenWidth = (Dimensions.get("window").width -88);
 const thumbMeasure = (width - 48 - 32) / 3
-
+const data = {
+  labels: ["Car", "Bus", "Cycle"], // optional
+  data: [0.4, 0.6, 0.8]
+};
+const chartConfig = {
+      backgroundColor: "#4CAF50",
+      backgroundGradientFrom: "#4CAF50",
+      backgroundGradientTo: "#ffa726",
+      decimalPlaces: 2, // optional, defaults to 2dp
+      color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+      labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+      style: {
+        borderRadius: 10
+      },
+      propsForDots: {
+        r: "6",
+        strokeWidth: "2",
+        stroke: "#ffa726"
+      }
+    }
 export default class Profile extends React.Component {
   render() {
     return (
@@ -87,14 +116,17 @@ export default class Profile extends React.Component {
             </Block>
             <Block style={{ paddingBottom: -HeaderHeight * 2 }}>
               <Block column space="between" center style={{ flexWrap: 'wrap' }}>
-                <Block row middle>
-                  <AntDesign name="staro" size={24} color="black" />
-                  <Text>CO2 destroyer</Text>
-                </Block>
-                <Block row middle>
-                  <FontAwesome name="superpowers" size={24} color="black" />
-                  <Text>Green superman</Text>
-                </Block>
+                <View>
+                  <ProgressChart
+                    data={data}
+                    width={screenWidth}
+                    height={220}
+                    strokeWidth={16}
+                    radius={32}
+                    chartConfig={chartConfig}
+                    hideLegend={false}
+                  />
+                </View>
               </Block>
             </Block>
           </ScrollView>
