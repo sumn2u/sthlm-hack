@@ -12,6 +12,9 @@ import SettingsScreen from '../screens/Settings'
 
 const { width } = Dimensions.get('screen')
 
+import CustomDrawerContent from './Menu'
+import { Icon, Header } from '../components'
+import { Images, materialTheme } from '../constants/'
 import Leaderboard from '../screens/Leaderboard'
 
 const Stack = createStackNavigator()
