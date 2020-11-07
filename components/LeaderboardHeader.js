@@ -6,17 +6,20 @@ import React from 'react';
 const LeaderboardHeader = () => {
   return (
     <Block style={styles.header}>
-      <Text style={{color: 'white', fontSize: 32}}>
+      <Text style={{color: 'black', fontSize: 28}}>
+
         Leaderboard <Icon name='star' family='AntDesign' style={styles.starIcon}/>
       </Text >
     </Block>
   );
 };
 
-const styles = StyleSheet.create({
+
+const styles = StyleSheet.create({  
   header: {
     flex: 1,
-    backgroundColor: '#1a1a2e',
+    backgroundColor: '#14A38B',
+
     alignItems: 'center',
     justifyContent: 'center',
     borderBottomColor: '#e94560',
@@ -24,7 +27,7 @@ const styles = StyleSheet.create({
   },
   starIcon: {
     fontSize: 45,
-    color: 'yellow',
+    color: 'orange',
   },
 });
 export default LeaderboardHeader;
