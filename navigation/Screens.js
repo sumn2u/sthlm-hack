@@ -12,11 +12,10 @@ import SettingsScreen from '../screens/Settings'
 
 const { width } = Dimensions.get('screen')
 
-import CustomDrawerContent from './Menu';
-import { Icon, Header } from '../components';
-import { Images, materialTheme } from "../constants/";
-import Leaderboard from '../screens/Leaderboard';
-
+import CustomDrawerContent from './Menu'
+import { Icon, Header } from '../components'
+import { Images, materialTheme } from '../constants/'
+import Leaderboard from '../screens/Leaderboard'
 
 const Stack = createStackNavigator()
 const Drawer = createDrawerNavigator()
@@ -271,11 +270,10 @@ function AppStack(props) {
               color={focused ? 'white' : materialTheme.COLORS.MUTED}
               style={{ marginRight: 2, marginLeft: 2 }}
             />
-
-          )
+          ),
         }}
       />
-       <Drawer.Screen
+      <Drawer.Screen
         name="Leaderboard"
         component={Leaderboard}
         options={{
@@ -284,10 +282,10 @@ function AppStack(props) {
               size={16}
               name="gears"
               family="font-awesome"
-              color={focused ? "white" : materialTheme.COLORS.MUTED}
+              color={focused ? 'white' : materialTheme.COLORS.MUTED}
               style={{ marginRight: -3 }}
             />
-          )
+          ),
         }}
       />
       <Drawer.Screen
@@ -299,9 +297,9 @@ function AppStack(props) {
               size={16}
               name="ios-log-in"
               family="ionicon"
-              color={focused ? "white" : materialTheme.COLORS.MUTED}
+              color={focused ? 'white' : materialTheme.COLORS.MUTED}
             />
-          )
+          ),
         }}
       />
 
