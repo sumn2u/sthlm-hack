@@ -1,8 +1,9 @@
+
 import React, { useEffect, useState } from 'react'
+
 import {StyleSheet} from 'react-native'
 import {Block, Text} from 'galio-framework'
 import lodash from 'lodash'
-
 import RankingBlock from './RankingBlock'
 
 
@@ -37,6 +38,7 @@ const RankingContainer = () => {
     <Block style={styles.rankingContainer}>
       {rankingList  ? rankingList : <Text>No data</Text>}
       <Text>{Array.isArray(rankingList)}</Text>
+
     </Block>
   )
 }

@@ -316,6 +316,7 @@ export default class Components extends React.Component {
         <ScrollView
           style={styles.components}
           showsVerticalScrollIndicator={false}>
+            <Leaderboard/>  
             {this.renderButtons()}
             {this.renderText()}
             {this.renderInputs()}

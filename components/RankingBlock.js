@@ -1,8 +1,10 @@
 import React from 'react'
+
 import {StyleSheet,  Text, Image} from 'react-native'
 import {Block, Icon} from 'galio-framework'
 
 import userImage from '../assets/images/user.jpg'
+
 
 const RankingBlock = ({username, co2Reduced, rank}) => {
   const size = 28;
@@ -42,6 +44,7 @@ const RankingBlock = ({username, co2Reduced, rank}) => {
           {' '}kg today
         </Text>
       </Block>
+
     </Block>
   )
 }
@@ -74,5 +77,6 @@ const styles = StyleSheet.create({
   floatRight: {
 
   }
+
 });
 export default RankingBlock

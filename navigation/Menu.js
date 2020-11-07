@@ -1,11 +1,15 @@
-import React from "react";
-import { TouchableWithoutFeedback, ScrollView, StyleSheet, Image } from "react-native";
-import { Block, Text, theme } from "galio-framework";
-import { useSafeArea } from "react-native-safe-area-context";
+import React from 'react'
+import {
+  TouchableWithoutFeedback,
+  ScrollView,
+  StyleSheet,
+  Image,
+} from 'react-native'
+import { Block, Text, theme } from 'galio-framework'
+import { useSafeArea } from 'react-native-safe-area-context'
 
-import { Icon, Drawer as DrawerCustomItem } from '../components/';
-import { Images, materialTheme } from "../constants/";
-
+import { Icon, Drawer as DrawerCustomItem } from '../components/'
+import { Images, materialTheme } from '../constants/'
 
 function CustomDrawerContent({
   drawerPosition,
@@ -15,6 +19,7 @@ function CustomDrawerContent({
   state,
   ...rest
 }) {
+
   const insets = useSafeArea();
   const screens = [
     "Home",
@@ -23,18 +28,19 @@ function CustomDrawerContent({
     "Components",
     "Leaderboard"
   ];
+
   return (
     <Block
       style={styles.container}
-      forceInset={{ top: "always", horizontal: "never" }}
+      forceInset={{ top: 'always', horizontal: 'never' }}
     >
       <Block flex={0.25} style={styles.header}>
         <TouchableWithoutFeedback
-          onPress={() => navigation.navigate("Profile")}
+          onPress={() => navigation.navigate('Profile')}
         >
           <Block style={styles.profile}>
             <Image source={{ uri: profile.avatar }} style={styles.avatar} />
-            <Text h5 color={"white"}>
+            <Text h5 color={'black'}>
               {profile.name}
             </Text>
           </Block>
@@ -45,9 +51,9 @@ function CustomDrawerContent({
           contentContainerStyle={[
             {
               paddingTop: insets.top * 0.4,
-              paddingLeft: drawerPosition === "left" ? insets.left : 0,
-              paddingRight: drawerPosition === "right" ? insets.right : 0
-            }
+              paddingLeft: drawerPosition === 'left' ? insets.left : 0,
+              paddingRight: drawerPosition === 'right' ? insets.right : 0,
+            },
           ]}
           showsVerticalScrollIndicator={false}
         >
@@ -59,29 +65,20 @@ function CustomDrawerContent({
                 navigation={navigation}
                 focused={state.index === index ? true : false}
               />
-            );
+            )
           })}
         </ScrollView>
       </Block>
-      <Block flex={0.3} style={{ paddingLeft: 7, paddingRight: 14 }}>
-       
-        <DrawerCustomItem
-          title="Log out"
-          navigation={navigation}
-          focused={state.index === 9 ? true : false}
-        />
-      </Block>
     </Block>
-  );
+  )
 }
-
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
   header: {
-    backgroundColor: '#4B1958',
+    backgroundColor: '#17EF94',
     paddingHorizontal: 28,
     paddingBottom: theme.SIZES.BASE,
     paddingTop: theme.SIZES.BASE * 2,
@@ -89,7 +86,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     paddingHorizontal: 28,
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
   },
   profile: {
     marginBottom: theme.SIZES.BASE / 2,
@@ -110,7 +107,7 @@ const styles = StyleSheet.create({
   },
   seller: {
     marginRight: 16,
-  }
-});
+  },
+})
 
-export default CustomDrawerContent;
+export default CustomDrawerContent
