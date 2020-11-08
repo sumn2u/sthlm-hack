@@ -296,19 +296,20 @@ function AppStack(props) {
           ),
         }}
       />
-      <Drawer.Screen
+    
+       <Drawer.Screen
         name="Leaderboard"
-        component={Leaderboard}
+        component={LeaderboardStack}
         options={{
           drawerIcon: ({ focused }) => (
             <Icon
               size={16}
-              name="gears"
-              family="font-awesome"
-              color={focused ? 'white' : materialTheme.COLORS.MUTED}
+              name="md-switch"
+              family="ionicon"
+              color={focused ? "white" : materialTheme.COLORS.MUTED}
               style={{ marginRight: -3 }}
             />
-          ),
+          )
         }}
       />
        <Drawer.Screen
