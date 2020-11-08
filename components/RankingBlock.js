@@ -1,11 +1,11 @@
 import React from 'react'
+import faker from 'faker';
 
 import {StyleSheet,  Text, Image} from 'react-native'
 import {Block, Icon} from 'galio-framework'
 
-import userImage from '../assets/images/user.jpg'
-
-
+// import userImage from '../assets/images/user.jpg'
+//const userImage = faker.image.avatar;
 const RankingBlock = ({username, co2Reduced, rank}) => {
   const size = 28;
   const gold = '#fcba03';
@@ -26,14 +26,14 @@ const RankingBlock = ({username, co2Reduced, rank}) => {
       crown = null;
       break;
   }
-
+  
   return (
     <Block style={styles.rankingBlock}>
       <Block style={styles.floatLeft}>
         <Block>
-          <Image style={styles.image} source={userImage}/>
+          <Image style={styles.image} source={{uri: faker.image.imageUrl()}}/>
           </Block> 
-        <Text>{username} {crown}</Text>
+        <Text>{faker.name.findName()} {crown}</Text>
       </Block>
 
       <Block style={styles.floatRight}>

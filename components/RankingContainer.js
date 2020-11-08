@@ -5,16 +5,15 @@ import {StyleSheet} from 'react-native'
 import {Block, Text} from 'galio-framework'
 import lodash from 'lodash'
 import RankingBlock from './RankingBlock'
+import { useIsFocused } from "@react-navigation/native"
 
-
-const RankingContainer = () => {
+const RankingContainer = ({date}) => {
   const [data, setData] = useState([])
   const [rankingList, setRankingList] = useState([])
   
-  
+  const isFocused = useIsFocused();
 
-  
-  useEffect(() => {
+    useEffect(() => {
     const fetchData = async (
       ) => {
         const url = 'http://katiparxa.com:8080/api/facets/'
@@ -23,17 +22,16 @@ const RankingContainer = () => {
         const result = await response.json()
         setData(result)
       }
+  
   fetchData()
-  }, [])
+    }, [date, isFocused]);
 
 
   useEffect(()=> {
     const orderList = data.length > 0 ? lodash.orderBy(data, ['co2Reduced'], ['desc']).map((item, index) => (<RankingBlock username={item.username} co2Reduced={item.co2reduced} key={item.id} rank={index + 1}/>)) : []
     setRankingList(orderList)
   }, [data])
-  useEffect(()=> {
-    console.log('data:', data)
-  })
+
   return (
     <Block style={styles.rankingContainer}>
       {rankingList  ? rankingList : <Text>No data</Text>}

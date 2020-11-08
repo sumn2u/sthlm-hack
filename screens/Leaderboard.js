@@ -6,7 +6,8 @@ const Leaderboard = () => {
   return (
     <>
      <LeaderboardHeader/> 
-     <RankingContainer/>
+
+     <RankingContainer date={new Date().toISOString()} />
     </>
   )
 }

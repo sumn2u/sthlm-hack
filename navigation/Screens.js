@@ -80,9 +80,8 @@ function LeaderboardStack(props) {
         options={{
           header: ({ navigation, scene }) => (
             <Header
-              white
-              transparent
-              title=""
+
+              title="Leaderboard"
               scene={scene}
               navigation={navigation}
             />
