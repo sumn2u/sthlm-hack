@@ -12,11 +12,10 @@ import SettingsScreen from '../screens/Settings'
 
 const { width } = Dimensions.get('screen')
 
-import CustomDrawerContent from './Menu';
-import { Icon, Header } from '../components';
-import { Images, materialTheme } from "../constants/";
-import Leaderboard from '../screens/Leaderboard';
-
+import CustomDrawerContent from './Menu'
+import { Icon, Header } from '../components'
+import { Images, materialTheme } from '../constants/'
+import Leaderboard from '../screens/Leaderboard'
 
 const Stack = createStackNavigator()
 const Drawer = createDrawerNavigator()
@@ -73,7 +72,11 @@ function SettingsStack(props) {
 }
 function LeaderboardStack(props) {
   return (
-    <Stack.Navigator initialRouteName="Leaderboard" mode="card" headerMode="screen">
+    <Stack.Navigator
+      initialRouteName="Leaderboard"
+      mode="card"
+      headerMode="screen"
+    >
       <Stack.Screen
         name="Leaderboard"
         component={Leaderboard}
@@ -87,11 +90,11 @@ function LeaderboardStack(props) {
               navigation={navigation}
             />
           ),
-          headerTransparent: true
+          headerTransparent: true,
         }}
       />
     </Stack.Navigator>
-  );
+  )
 }
 function ComponentsStack(props) {
   return (
@@ -147,7 +150,6 @@ function HomeStack(props) {
     </Stack.Navigator>
   )
 }
-
 
 function AppStack(props) {
   return (
@@ -296,8 +298,8 @@ function AppStack(props) {
           ),
         }}
       />
-    
-       <Drawer.Screen
+
+      <Drawer.Screen
         name="Leaderboard"
         component={LeaderboardStack}
         options={{
@@ -306,25 +308,10 @@ function AppStack(props) {
               size={16}
               name="md-switch"
               family="ionicon"
-              color={focused ? "white" : materialTheme.COLORS.MUTED}
+              color={focused ? 'white' : materialTheme.COLORS.MUTED}
               style={{ marginRight: -3 }}
             />
-          )
-        }}
-      />
-       <Drawer.Screen
-        name="Leaderboard"
-        component={LeaderboardStack}
-        options={{
-          drawerIcon: ({ focused }) => (
-            <Icon
-              size={16}
-              name="md-switch"
-              family="ionicon"
-              color={focused ? "white" : materialTheme.COLORS.MUTED}
-              style={{ marginRight: -3 }}
-            />
-          )
+          ),
         }}
       />
       <Drawer.Screen
