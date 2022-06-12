@@ -6,6 +6,15 @@
 
 ![Product Gif](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-kit-react-native/opt_mkrn_thumbnail.jpg)
 
+
+## Proposed UI
+![Mobile App Landing Page](./greenme.png)
+
+The flow of the app is described [here](https://medium.com/@sumn2u/sustainable-mobility-nudges-based-on-open-data-and-behavioral-economics-13a772962bc2). 
+
+Initial prototype was showcased in [Openhack STHLM 2020](https://youtu.be/2DFuEHg9S4g).
+
+
 Material Kit React Native is a fully coded app template built over [Galio.io](https://galio.io/?ref=creativetim), [React Native](https://facebook.github.io/react-native/?ref=creativetim) and [Expo](https://expo.io/?ref=creativetim) to allow you to create powerful and beautiful e-commerce mobile applications. We have redesigned all the usual components in Galio to make it look like Google's material design, minimalistic and easy to use.
 
 Start your development with a badass material UI Kit for React Native inspired by Material Design. If you like Google's Material Design, you will love this react native kit! It features a huge number of components and screens built to fit together and look amazing. 
